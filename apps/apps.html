@@ -1,0 +1,41 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>K.K Designs - Apps</title>
+	<link rel="shortcut icon" type="image/png" href="../assets/favicon.ico"/>
+</head>
+<script>
+	function array(htmlCollection) {
+		return Array.from(htmlCollection);
+	}
+	async function getWebpage() {
+		const response = await fetch('https://codegen.plasmic.app/api/v1/loader/html/preview/wRLGgkVPHvptYxFb7DwwxA/apps?hydrate=1&embedHydrate=1', {
+		headers: {
+			// Your project ID and public API token
+			'x-plasmic-api-project-tokens': 'wRLGgkVPHvptYxFb7DwwxA:L8Oj2pwtsLyadXnbOBjr9K3L1W7fTSzbpvbF120CAvfvRu8sHozK0tJW4UXHBzAebPVSIPjj7bQbzebLeDxg'
+			// You can find your PROJECT token by visiting
+			// https://studio.plasmic.app/projects/[PROJECTID]/docs/loader#showToken=true
+		}
+		});
+		const result = await response.json();
+		document.body.innerHTML = result.html;
+		const appsLink = document.getElementsByClassName('plasmic_default__all plasmic_default__a root_reset_wRLGgkVPHvptYxFb7DwwxA LinkButton__root__vbT88 LinkButton__root__type_small__vbT88SxKvc __wab_instance Header__linkButton__a9P2C');
+		const clockfaceLink = document.getElementsByClassName('plasmic_default__all plasmic_default__a root_reset_wRLGgkVPHvptYxFb7DwwxA LinkButton__root__vbT88 LinkButton__root__type_small__vbT88SxKvc __wab_instance Header__linkButton__zaoHk');
+		const supportLink = document.getElementsByClassName('plasmic_default__all plasmic_default__a root_reset_wRLGgkVPHvptYxFb7DwwxA LinkButton__root__vbT88 LinkButton__root__type_small__vbT88SxKvc __wab_instance Header__linkButton___8M4BA');
+		const homeLink = document.getElementsByClassName('plasmic_default__all plasmic_default__a Header__link__aSbgI');
+		array(appsLink)[0].href = '../apps/apps.html';
+		array(clockfaceLink)[0].href = '../clockfaces/clockfaces.html';
+		array(supportLink)[0].href = '../support/support.html';
+		array(homeLink)[0].href = '../home/home.html';
+		const appsLinkFooter = document.getElementsByClassName('plasmic_default__all plasmic_default__a __wab_text Footer__link__yVBj');
+		const clockfaceLinkFooter = document.getElementsByClassName('plasmic_default__all plasmic_default__a __wab_text Footer__link___2LfjP');
+		const supportLinkFooter = document.getElementsByClassName('plasmic_default__all plasmic_default__a __wab_text Footer__link___6QEsc');
+		const homeLinkFooter = document.getElementsByClassName('plasmic_default__all plasmic_default__a __wab_text Footer__link__kcSiP');
+		const homeLinkFooter1 = document.getElementsByClassName('plasmic_default__all plasmic_default__a __wab_text Footer__link___6W5UT');
+		array(appsLinkFooter)[0].href = '../apps/apps.html';
+		array(clockfaceLinkFooter)[0].href = '../clockfaces/clockfaces.html';
+		array(supportLinkFooter)[0].href = '../support/support.html';
+		array(homeLinkFooter)[0].href = '../home/home.html';
+		array(homeLinkFooter1)[0].href = '../home/home.html';
+	}
+	getWebpage();
+</script>
